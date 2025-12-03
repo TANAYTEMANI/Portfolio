@@ -47,7 +47,7 @@ export default function Loading({ onComplete }) {
       clearInterval(progressInterval)
       clearInterval(messageInterval)
     }
-  }, [onComplete])
+  }, [onComplete, loadingMessages.length])
 
   return (
     <div className="fixed inset-0 bg-terminal-bg z-50 flex items-center justify-center">

@@ -12,14 +12,14 @@ export default function About() {
         {/* About Content */}
         <div className="space-y-8 ml-8 md:ml-12">
           <p className="text-terminal-text text-base md:text-lg leading-relaxed">
-            I'm an AI Engineer who builds production-ready intelligent systems that solve real-world problems. 
+            I&apos;m an AI Engineer who builds production-ready intelligent systems that solve real-world problems. 
             Currently at <span className="text-terminal-accent font-semibold">TheAgentic (Zenith Software Limited)</span>, 
             I specialize in building multi-agent AI systems using <span className="text-terminal-accent">PydanticAI</span>, 
             enabling autonomous document intelligence, structured data extraction, and agent-orchestrated reasoning.
           </p>
 
           <p className="text-terminal-text text-base md:text-lg leading-relaxed">
-            I've developed enterprise-scale autonomous agent ecosystems (15+ agents) for CRM, onboarding, and lifecycle 
+            I&apos;ve developed enterprise-scale autonomous agent ecosystems (15+ agents) for CRM, onboarding, and lifecycle 
             analytics—delivering <span className="text-terminal-accent font-semibold">end-to-end AI automation</span> for 
             business operations across platforms like HubSpot, Salesforce, Slack, Gmail, and Jira.
           </p>
