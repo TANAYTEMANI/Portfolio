@@ -38,14 +38,14 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex items-center gap-3 text-2xl md:text-3xl font-bold">
           <span className="text-terminal-accent">&gt;</span>
-          <h2 className="text-terminal-text">academic_projects</h2>
+          <h2 className="text-terminal-text">projects</h2>
           <span className="text-terminal-accent cursor-blink">_</span>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-1 gap-8 ml-8 md:ml-12">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={index}
               className="border border-terminal-dim p-6 md:p-8 rounded-lg hover:border-terminal-accent transition-all card-hover"
             >
