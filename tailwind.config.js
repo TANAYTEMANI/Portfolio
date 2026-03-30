@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,39 +8,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        terminal: {
-          bg: '#0a0a0a',
-          text: '#e0e0e0',
-          accent: '#00ff00',
-          dim: '#666666',
-          hover: '#1a1a1a',
+        cream: '#FAF9F6',
+        sand: '#F0EDE6',
+        bone: '#E5E1D8',
+        forest: {
+          DEFAULT: '#2D5F3B',
+          deep: '#1E4529',
         },
+        mint: '#6EE7A0',
+        charcoal: '#1C1C1C',
+        muted: '#6B6B6B',
       },
       fontFamily: {
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      borderRadius: {
+        card: '12px',
       },
       animation: {
-        'blink': 'blink 1s step-end infinite',
-        'fadeIn': 'fadeIn 0.5s ease-in',
-        'slideUp': 'slideUp 0.5s ease-out',
+        'marquee-left': 'marquee-left linear infinite',
+        'marquee-right': 'marquee-right linear infinite',
       },
       keyframes: {
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
+        'marquee-left': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-33.333%)' },
         },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        'marquee-right': {
+          from: { transform: 'translateX(-33.333%)' },
+          to: { transform: 'translateX(0)' },
         },
       },
     },
   },
   plugins: [],
 }
-

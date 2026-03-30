@@ -1,86 +1,57 @@
+import { ScrollReveal, HeadingReveal } from './ScrollReveal'
+
+function MarqueeRow({ skills, reverse = false, speed = 35 }) {
+  const tripled = [...skills, ...skills, ...skills]
+
+  return (
+    <div className="overflow-hidden py-1.5">
+      <div
+        className={`flex gap-3 whitespace-nowrap ${reverse ? 'animate-marquee-right' : 'animate-marquee-left'}`}
+        style={{ animationDuration: `${speed}s` }}
+      >
+        {tripled.map((skill, i) => (
+          <span key={i} className="tag shrink-0">{skill}</span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Skills() {
-  const skillCategories = [
-    {
-      category: "AI & LLM Ecosystem",
-      description: "Building intelligent systems with Large Language Models",
-      skills: [
-        "Agentic AI", "PydanticAI", "LangChain", "LangGraph", "CrewAI",
-        "RAG Pipelines", "Vector Databases", "Knowledge Graphs",
-        "LLM Orchestration", "Prompt Engineering", "NLP",
-        "Multimodal AI (Vision + Text)"
-      ]
-    },
-    {
-      category: "Machine Learning",
-      description: "Deep learning and computer vision expertise",
-      skills: [
-        "TensorFlow", "PyTorch", "Deep Learning", "Computer Vision",
-        "YOLO", "CNNs", "Transformers", "Reinforcement Learning"
-      ]
-    },
-    {
-      category: "Data / Backend",
-      description: "Data engineering and backend technologies",
-      skills: [
-        "SQL", "Snowflake", "Azure Data Factory (ADF)",
-        "Azure Synapse Analytics", "Apache Spark", "Kafka", "Hadoop"
-      ]
-    },
-    {
-      category: "Programming",
-      description: "Core programming languages",
-      skills: ["Python", "Java", "C", "JavaScript", "TypeScript"]
-    },
-    {
-      category: "DevOps / Tools",
-      description: "Development and deployment tools",
-      skills: [
-        "Docker", "Kubernetes", "Linux", "GitHub", "Shell",
-        "React", "Node.js", "Git"
-      ]
-    }
+  const rows = [
+    { skills: ['Agentic AI', 'PydanticAI', 'LangChain', 'LangGraph', 'CrewAI', 'RAG Pipelines', 'Vector Databases', 'Knowledge Graphs', 'LLM Orchestration', 'Prompt Engineering', 'NLP', 'Multimodal AI'], speed: 40 },
+    { skills: ['TensorFlow', 'PyTorch', 'Deep Learning', 'Computer Vision', 'YOLO', 'CNNs', 'Transformers', 'Reinforcement Learning', 'Snowflake', 'Apache Spark', 'Kafka', 'Hadoop'], speed: 35, reverse: true },
+    { skills: ['Python', 'Java', 'C', 'JavaScript', 'TypeScript', 'SQL', 'Azure Data Factory', 'Azure Synapse', 'FastAPI', 'Pydantic', 'SQLAlchemy', 'PostgreSQL'], speed: 38 },
+    { skills: ['Docker', 'Kubernetes', 'Linux', 'GitHub', 'Shell', 'React', 'Node.js', 'Git', 'OpenCV', 'EasyOCR', 'Next.js', 'Tailwind CSS'], speed: 32, reverse: true },
   ]
 
   return (
-    <section id="skills" className="section-spacing px-6 md:px-12 lg:px-24 bg-terminal-hover">
-      <div className="max-w-5xl mx-auto space-y-12">
-        {/* Section Header */}
-        <div className="flex items-center gap-3 text-2xl md:text-3xl font-bold">
-          <span className="text-terminal-accent">&gt;</span>
-          <h2 className="text-terminal-text">tech_stack</h2>
-          <span className="text-terminal-accent cursor-blink">_</span>
-        </div>
+    <section id="skills" className="section-padding bg-[#F0EDE6] dark:bg-[#111111]">
+      <div className="max-w-7xl mx-auto">
+        <ScrollReveal>
+          <div className="flex items-center gap-4 mb-5">
+            <span className="section-label">/ Skills</span>
+            <div className="flex-1 h-px bg-bone dark:bg-[#2A2A2A]" />
+          </div>
+        </ScrollReveal>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6 ml-8 md:ml-12">
-          {skillCategories.map((category, index) => (
-            <div 
-              key={index}
-              className="border border-terminal-dim p-6 rounded-lg hover:border-terminal-accent transition-all card-hover"
-            >
-              {/* Category Header */}
-              <div className="mb-4">
-                <h3 className="text-lg md:text-xl font-bold text-terminal-accent mb-1">
-                  {category.category}
-                </h3>
-                <p className="text-terminal-dim text-sm">
-                  {category.description}
-                </p>
-              </div>
+        <HeadingReveal delay={0.1}>
+          <h2 className="section-title mb-14">Tech stack</h2>
+        </HeadingReveal>
 
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, i) => (
-                  <span key={i} className="tag text-xs md:text-sm">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <ScrollReveal delay={0.2}>
+          <div className="space-y-3">
+            {rows.map((row, i) => (
+              <MarqueeRow
+                key={i}
+                skills={row.skills}
+                reverse={row.reverse}
+                speed={row.speed}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )
 }
-
