@@ -22,9 +22,10 @@ export default function Navigation() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Building', href: '#building' },
     { name: 'Skills', href: '#skills' },
     { name: 'Education', href: '#education' },
+    { name: 'Interests', href: '#interests' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -41,7 +42,7 @@ export default function Navigation() {
           <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
             <a
               href="#"
-              className="font-display font-extrabold text-xl tracking-tight text-charcoal dark:text-white hover:text-forest dark:hover:text-mint transition-colors"
+              className="font-display font-extrabold text-2xl md:text-[26px] tracking-tight text-charcoal dark:text-white hover:text-forest dark:hover:text-mint transition-colors"
             >
               tanay<span className="text-forest dark:text-mint">.</span>
             </a>
@@ -51,7 +52,7 @@ export default function Navigation() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="link-hover text-muted hover:text-charcoal dark:text-[#888] dark:hover:text-white transition-colors text-sm font-mono"
+                  className="link-hover text-muted hover:text-charcoal dark:text-[#888] dark:hover:text-white transition-colors text-base md:text-[17px] font-mono"
                 >
                   {link.name}
                 </a>

@@ -27,20 +27,6 @@ module.exports = {
       borderRadius: {
         card: '12px',
       },
-      animation: {
-        'marquee-left': 'marquee-left linear infinite',
-        'marquee-right': 'marquee-right linear infinite',
-      },
-      keyframes: {
-        'marquee-left': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-33.333%)' },
-        },
-        'marquee-right': {
-          from: { transform: 'translateX(-33.333%)' },
-          to: { transform: 'translateX(0)' },
-        },
-      },
     },
   },
   plugins: [],

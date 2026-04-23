@@ -34,7 +34,7 @@ export default function Hero() {
             <span className="section-label">/ Hello, I&apos;m</span>
           </motion.div>
 
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold text-charcoal dark:text-white leading-[0.92] tracking-[-0.03em]">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold text-charcoal dark:text-white leading-[0.92] tracking-[-0.03em]">
             <span className="block overflow-hidden pb-2">
               {FIRST.split('').map((char, i) => (
                 <AnimatedChar key={`f${i}`} char={char} delay={baseDelay + i * charDelay} />
@@ -63,24 +63,11 @@ export default function Hero() {
             </span>
           </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.75, ease: EASE }}
-            className="flex flex-wrap items-center gap-3 text-base md:text-lg font-mono"
-          >
-            <span className="font-semibold text-forest dark:text-mint">AI Engineer</span>
-            <span className="text-bone dark:text-[#333]">·</span>
-            <span className="text-muted dark:text-[#888]">Multi-Agent Systems</span>
-            <span className="text-bone dark:text-[#333]">·</span>
-            <span className="text-muted dark:text-[#888]">LLM Orchestration</span>
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.85, ease: EASE }}
-            className="text-muted dark:text-[#888] text-base md:text-lg leading-relaxed max-w-2xl font-mono"
+            className="text-muted dark:text-[#888] text-lg md:text-xl leading-relaxed max-w-2xl font-mono"
           >
             I build intelligent AI systems that automate work and deliver real results.
             Currently crafting production-ready multi-agent ecosystems at TheAgentic.
@@ -112,7 +99,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1.2, ease: EASE }}
             className="pt-16 md:pt-24"
           >
-            <a href="#about" className="inline-flex items-center gap-2 text-muted/60 dark:text-[#555] text-sm font-mono hover:text-forest dark:hover:text-mint transition-colors group">
+            <a href="#about" className="inline-flex items-center gap-2 text-muted/60 dark:text-[#555] text-[15px] font-mono hover:text-forest dark:hover:text-mint transition-colors group">
               <span>scroll to explore</span>
               <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />

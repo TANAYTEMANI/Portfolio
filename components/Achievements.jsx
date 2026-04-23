@@ -25,18 +25,18 @@ export default function Achievements() {
         </ScrollReveal>
 
         <HeadingReveal delay={0.1}>
-          <h2 className="section-title mb-14">Certifications</h2>
+          <h2 className="section-title mb-10">Certifications</h2>
         </HeadingReveal>
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {achievements.map((a, index) => (
             <StaggerItem key={index} index={index}>
               <MagneticCard intensity={8}>
                 <div className="card h-full">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-forest dark:text-mint block mb-2">
+                  <span className="text-[12px] md:text-[13px] font-mono uppercase tracking-[0.2em] text-forest dark:text-mint block mb-3">
                     {a.issuer}
                   </span>
-                  <p className="font-display font-semibold text-charcoal dark:text-white text-sm">
+                  <p className="font-display font-semibold text-charcoal dark:text-white text-base md:text-lg leading-snug">
                     {a.title}
                   </p>
                 </div>
