@@ -25,7 +25,7 @@ export default function CursorEffects() {
 
     function getColor() {
       const isDark = document.documentElement.classList.contains('dark')
-      return isDark ? [110, 231, 160] : [45, 95, 59]
+      return isDark ? [250, 204, 21] : [45, 95, 59]
     }
 
     function onMouseMove(e) {

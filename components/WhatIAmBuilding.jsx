@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ScrollReveal, HeadingReveal } from './ScrollReveal'
 
@@ -6,43 +5,17 @@ const EASE = [0.22, 1, 0.36, 1]
 
 const projects = [
   {
-    title: 'VoxAgent',
-    description: 'Real-time AI voice telecalling system that runs a fully autonomous outbound sales call pipeline — live microphone capture, streaming speech-to-text, LLM-driven conversation, and instant text-to-speech playback — all with sub-second latency. Built for natural, production-ready voice agents.',
+    title: 'CutDraft',
+    description: 'CutDraft is an AI video editor that helps creators turn raw footage into ready-to-post short-form videos using plain-language commands for clean cuts, captions, thumbnails, and exports across Reels, Shorts, podcasts, tutorials, and creator workflows.',
     status: 'In Active Development',
-    pipeline: [
-      { name: 'Deepgram STT', role: 'Listen', description: 'Streaming STT with dual-signal turn detection' },
-      { name: 'Groq LLM', role: 'Think', description: 'Speculative streaming on Llama 3.3 70B for natural flow' },
-      { name: 'Cartesia TTS', role: 'Speak', description: 'Sonic-3 TTS with echo-aware VAD for barge-in' },
-    ],
-    features: [
-      'End-to-end voice loop: Mic → STT → LLM → TTS → Speaker in real-time',
-      'Speculative LLM inference — starts generating before STT finalizes for ~300ms head start',
-      'Echo-aware VAD enables barge-in without headphones',
-      'Structured call logging with delta timestamps for latency debugging',
-      'Full call recording and transcript export for review and tuning',
-    ],
-    technologies: ['Deepgram', 'Groq', 'Cartesia Sonic-3', 'Python AsyncIO', 'Pydantic'],
-    pipelineLabel: 'Voice Pipeline',
+    technologies: ['React', 'Next.js', 'FFmpeg', 'OpenAI', 'Python', 'Vision Model', 'FastAPI', 'LangGraph', 'PostgreSQL', 'Qdrant'],
   },
   {
     title: 'FinDocMind',
     description: 'Enterprise-grade AI-Powered Document Intelligence Platform that transforms unstructured financial documents (PDFs, Excel, CSV) into structured Extraction Grids using a sophisticated three-stage AI agent pipeline built on OpenAI\'s GPT models.',
     status: 'Nearing Completion',
     github: 'https://github.com/TANAYTEMANI/FinDocMind',
-    pipeline: [
-      { name: 'Page Analyzer', role: 'Level 1', description: 'Context-aware, page-level field discovery' },
-      { name: 'Doc Consolidator', role: 'Level 2', description: 'Field merging and deduplication per document' },
-      { name: 'Multi-Doc Orchestrator', role: 'Level 3', description: 'Cross-document standardization and balancing' },
-    ],
-    features: [
-      'Three-Stage AI Agent Pipeline with hierarchical orchestration',
-      'GPT-powered field discovery with semantic deduplication',
-      'Multi-format processing: PDF, Excel, CSV',
-      'Async concurrent processing pipeline with FastAPI',
-      'Type-safe Pydantic models, SQLAlchemy ORM, structured logging',
-    ],
     technologies: ['OpenAI GPT-4', 'LangChain Agents', 'FastAPI', 'SQLAlchemy', 'Pydantic', 'PostgreSQL'],
-    pipelineLabel: 'Agent Architecture',
   },
 ]
 
@@ -50,9 +23,9 @@ function ProjectCard({ project }) {
   const statusColor = 'bg-forest/[0.06] dark:bg-mint/[0.08] text-forest dark:text-mint border-forest/[0.12] dark:border-mint/[0.15]'
 
   return (
-    <div className="w-[85vw] md:w-[70vw] lg:w-[55vw] flex-shrink-0 snap-center">
+    <div className="w-full">
       <div className="card h-full">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
           <h3 className="font-display text-2xl md:text-3xl font-extrabold text-charcoal dark:text-white tracking-tight">
             {project.title}
           </h3>
@@ -61,49 +34,12 @@ function ProjectCard({ project }) {
           </span>
         </div>
 
-        <p className="text-muted dark:text-[#999] mb-10 text-base md:text-lg leading-[1.75]">
+        <p className="text-muted dark:text-[#999] mb-6 text-[15px] md:text-base leading-[1.75]">
           {project.description}
         </p>
 
-        <div className="mb-10">
-          <h4 className="font-mono text-[13px] md:text-sm uppercase tracking-[0.2em] text-forest dark:text-mint mb-5">
-            {project.pipelineLabel}
-          </h4>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {project.pipeline.map((stage, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-xl bg-charcoal dark:bg-[#0A0A0A] border border-charcoal/80 dark:border-[#222]"
-              >
-                <div className="flex items-center gap-2.5 mb-3">
-                  <span className="w-7 h-7 rounded-md bg-forest/20 dark:bg-mint/15 text-forest dark:text-mint flex items-center justify-center text-xs font-mono font-bold">
-                    {i + 1}
-                  </span>
-                  <h5 className="font-display font-bold text-white text-base">
-                    {stage.name}
-                  </h5>
-                </div>
-                <p className="text-[#B0B0B0] text-[15px] md:text-base leading-[1.6]">{stage.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="mb-8">
-          <h4 className="font-mono text-[13px] md:text-sm uppercase tracking-[0.2em] text-forest dark:text-mint mb-4">
-            Highlights
-          </h4>
-          <ul className="space-y-3">
-            {project.features.map((feature, i) => (
-              <li key={i} className="flex gap-3 text-muted dark:text-[#999] text-[15px] md:text-base">
-                <span className="text-forest dark:text-mint shrink-0 mt-0.5">→</span>
-                <span className="leading-relaxed">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex flex-wrap gap-2.5 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech, i) => (
             <span key={i} className="tag">{tech}</span>
           ))}
@@ -128,14 +64,6 @@ function ProjectCard({ project }) {
 }
 
 export default function WhatIAmBuilding() {
-  const scrollRef = useRef(null)
-
-  const scroll = (dir) => {
-    if (!scrollRef.current) return
-    const cardWidth = scrollRef.current.firstChild?.offsetWidth || 600
-    scrollRef.current.scrollBy({ left: dir * (cardWidth + 24), behavior: 'smooth' })
-  }
-
   return (
     <section id="building" className="section-padding bg-[#F0EDE6] dark:bg-[#111111]">
       <div className="max-w-7xl mx-auto">
@@ -150,46 +78,10 @@ export default function WhatIAmBuilding() {
           <HeadingReveal delay={0.1}>
             <h2 className="section-title">What I&apos;m working on</h2>
           </HeadingReveal>
-
-          <ScrollReveal delay={0.2} className="hidden md:flex items-center gap-2 shrink-0 ml-8">
-            <button
-              onClick={() => scroll(-1)}
-              className="w-10 h-10 rounded-full border border-bone dark:border-[#2A2A2A] flex items-center justify-center text-muted hover:text-forest dark:hover:text-mint hover:border-forest dark:hover:border-mint transition-all"
-              aria-label="Previous project"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => scroll(1)}
-              className="w-10 h-10 rounded-full border border-bone dark:border-[#2A2A2A] flex items-center justify-center text-muted hover:text-forest dark:hover:text-mint hover:border-forest dark:hover:border-mint transition-all"
-              aria-label="Next project"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={0.12} className="md:hidden mb-6">
-          <div className="inline-flex items-center gap-2 text-muted/70 dark:text-[#777] text-[13px] font-mono">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            <span>swipe</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </ScrollReveal>
-
         <ScrollReveal delay={0.15}>
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
-          >
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}

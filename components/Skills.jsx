@@ -233,7 +233,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="section-padding bg-[#F0EDE6] dark:bg-[#111111]">
+    <section id="skills" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-5">

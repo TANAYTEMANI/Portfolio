@@ -81,7 +81,7 @@ export default function Hero() {
           >
             <a
               href="#experience"
-              className="px-6 py-3 bg-forest dark:bg-mint text-white dark:text-[#0C0C0C] font-semibold rounded-lg hover:bg-forest-deep dark:hover:bg-[#5BC67B] transition-all duration-300 hover:shadow-lg hover:shadow-forest/15 dark:hover:shadow-mint/15 hover:-translate-y-0.5"
+              className="px-6 py-3 bg-forest dark:bg-mint text-white dark:text-[#0C0C0C] font-semibold rounded-lg hover:bg-forest-deep dark:hover:bg-[#EAB308] transition-all duration-300 hover:shadow-lg hover:shadow-forest/15 dark:hover:shadow-mint/15 hover:-translate-y-0.5"
             >
               View Experience
             </a>

@@ -15,7 +15,7 @@ export default function Achievements() {
   ]
 
   return (
-    <section id="achievements" className="section-padding">
+    <section id="achievements" className="section-padding bg-[#F0EDE6] dark:bg-[#111111]">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-5">

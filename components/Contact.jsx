@@ -148,13 +148,13 @@ export default function Contact() {
 
           <ScrollReveal delay={0.25}>
             <motion.a
-              href="/Tanay_Agarwal_Resume.pdf"
-              download="Tanay_Agarwal_Resume.pdf"
+              href="/TanayAgarwal_Resume.pdf"
+              download="TanayAgarwal_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -3, scale: 1.02 }}
               transition={{ duration: 0.2, ease: EASE }}
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-forest dark:bg-mint text-white dark:text-[#0C0C0C] font-mono font-medium text-base uppercase tracking-wider rounded-full hover:bg-forest-deep dark:hover:bg-[#5BC67B] transition-colors duration-300 hover:shadow-xl hover:shadow-forest/15 dark:hover:shadow-mint/15"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-forest dark:bg-mint text-white dark:text-[#0C0C0C] font-mono font-medium text-base uppercase tracking-wider rounded-full hover:bg-forest-deep dark:hover:bg-[#EAB308] transition-colors duration-300 hover:shadow-xl hover:shadow-forest/15 dark:hover:shadow-mint/15"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
